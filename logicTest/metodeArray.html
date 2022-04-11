@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metode Array</title>
+  </head>
+  <body>
+    <script>
+      var input = ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"];
+      function dataHandling2(input) {
+        input.splice(1, 1, "Roman Alamsyah Elsharawy");
+        input.splice(2, 1, "Provinsi Bandar Lampung");
+        input.splice(4, 1, "Pria");
+        input.splice(5, 0, "SMA Internasional Metro");
+        console.log(input);
 
+        input.slice();
+        var tanggal = input[3].split("/");
+        var angkaHari = tanggal;
+        var angkaBulan = tanggal;
+        var angkaTahun = tanggal;
+        var namaBulan;
+        switch (angkaBulan[1]) {
+          case "01":
+            namaBulan = "Januari";
+            break;
+          case "02":
+            namaBulan = "Februari";
+            break;
+          case "03":
+            namaBulan = "Maret";
+            break;
+          case "04":
+            namaBulan = "April";
+            break;
+          case "05":
+            namaBulan = "Mei";
+            break;
+          case "06":
+            namaBulan = "Juni";
+            break;
+          case "07":
+            namaBulan = "Juli";
+            break;
+          case "08":
+            namaBulan = "Agustus";
+            break;
+          case "09":
+            namaBulan = "September";
+            break;
+          case "10":
+            namaBulan = "Oktober";
+            break;
+          case "11":
+            namaBulan = "November";
+            break;
+          case "12":
+            namaBulan = "Desember";
+            break;
+          default:
+        }
+        console.log(namaBulan);
+        angkaBulan.sort(function (value1, value2) {
+          return value1 < value2;
+        });
+        console.log(
+          angkaBulan.sort(function (a, b) {
+            return b - a;
+          })
+        );
+        var tanggal = angkaBulan.sort().join("-");
+        //console.log(tanggal);
+        console.log(angkaHari[2] + "-" + angkaBulan[0] + "-" + angkaTahun[1]);
+        var nama = [...input[1]].slice(0, 15);
+        nama = nama.join("");
+        console.log(nama);
+      }
+      dataHandling2(input);
+    </script>
+  </body>
+</html>
